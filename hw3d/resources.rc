@@ -1,0 +1,3 @@
+#include <resources.hpp>
+
+ICON_APPLICATION ICON "ICON.ico"

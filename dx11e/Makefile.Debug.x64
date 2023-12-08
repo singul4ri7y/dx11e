@@ -1,0 +1,16 @@
+CC := g++
+LFLAGS := -DUNICODE -D_UNICODE -DDEBUG -D_DEBUG -DDX11E_DLL -std=c++2a -Wall -MMD
+ADDITIONAL_INCLUDES := -I"include/"
+SRC_DIR := src
+OBJ_DIR := ../bin/intermediate/dx11e/Debug-x64
+SRC_FILES := $(wildcard $(SRC_DIR)/*.cpp)
+OBJ_FILES := $(patsubst $(SRC_DIR)/%.cpp, $(OBJ_DIR)/%.o, $(SRC_FILES))
+OUTPUT_DIR = ../bin/native/Debug-x64
+
+all: $(OBJ_FILES)
+	$(CC) $^ -shared -o $(addprefix $(OUTPUT_DIR)/, dx11e.dll) -ld3d11 -ldxgi -ld3dcompiler -L. -l../vendor/dxerr -Wl,--subsystem,windows,--out-implib,$(addprefix $(OUTPUT_DIR)/, libdx11e.a)
+
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
+	$(CC) -c -g $< $(LFLAGS) $(ADDITIONAL_INCLUDES) -o $@
+
+-include $(OBJ_FILES:.o=.d)

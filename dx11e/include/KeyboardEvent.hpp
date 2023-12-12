@@ -8,26 +8,26 @@
 DX11E_START
 
 class DX11E_API KeyboardEvent final {
-	
-	public: 
-		enum Events {
-			PRESSED = 1, RELEASED, INVALID = -1
-		};
-	
-	public: 
-		KeyboardEvent();
-		KeyboardEvent(const KeyboardEvent::Events&, const char);
+    
+    public: 
+        enum Events {
+            PRESSED = 1, RELEASED, INVALID = -1
+        };
+    
+    public: 
+        KeyboardEvent();
+        KeyboardEvent(const KeyboardEvent::Events&, const char);
 
-		bool IsPressed() const;
-		bool IsReleased() const;
-		bool IsInvalid() const;
+        bool IsPressed() const;
+        bool IsReleased() const;
+        bool IsInvalid() const;
 
-		char GetKeyCode() const;
+        char GetKeyCode() const;
 
-	private: 
-		const KeyboardEvent::Events m_eventType;
-		const char m_key;
-	
+    private: 
+        const KeyboardEvent::Events m_eventType;
+        const char m_key;
+    
 };
 
 DX11E_END

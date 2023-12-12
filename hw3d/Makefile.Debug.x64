@@ -10,12 +10,12 @@ OUTPUT_DIR = ../bin/native/Debug-x64
 RSC = $(addprefix $(OBJ_DIR)/, resources.res)
 
 all: $(OBJ_FILES) $(RSC)
-	$(CC) $^ -mwindows -o $(addprefix $(OUTPUT_DIR)/, hw3d.exe) -L. -l$(addprefix $(OUTPUT_DIR)/, dx11e)
+    $(CC) $^ -mwindows -o $(addprefix $(OUTPUT_DIR)/, hw3d.exe) -L. -l$(addprefix $(OUTPUT_DIR)/, dx11e)
 
 $(RSC): resources.rc
-	windres resources.rc $(ADDITIONAL_INCLUDES) -O coff -o $(RSC)
+    windres resources.rc $(ADDITIONAL_INCLUDES) -O coff -o $(RSC)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
-	$(CC) -c -g $< $(LFLAGS) $(ADDITIONAL_INCLUDES) -o $@
+    $(CC) -c -g $< $(LFLAGS) $(ADDITIONAL_INCLUDES) -o $@
 
 -include $(OBJ_FILES:.o=.d)

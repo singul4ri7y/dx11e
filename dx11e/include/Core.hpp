@@ -6,10 +6,10 @@
 // Framework API Import/Export definition.
 #if defined(DX11E_DLL) 
 
-	#define DX11E_API __declspec(dllexport)
+    #define DX11E_API __declspec(dllexport)
 #else 
 
-	#define DX11E_API __declspec(dllimport)
+    #define DX11E_API __declspec(dllimport)
 #endif
 
 // Namespaces.

@@ -16,7 +16,7 @@ Just run one of the bash scripts, both are 64-bits.
 - Have support for GNU Make.
 
 ## Photo Demonstration: 
-![Demostration 1](pictures/display-1.png)
+![Demostration 1](pictures/display.png)
 
 You can check another project of mine, which compiles High-Level Shading Language (HLSL) shaders used by DirectX [here](https://github.com/signul4ri7y/hlslc).
 

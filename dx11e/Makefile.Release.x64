@@ -8,9 +8,9 @@ OBJ_FILES := $(patsubst $(SRC_DIR)/%.cpp, $(OBJ_DIR)/%.o, $(SRC_FILES))
 OUTPUT_DIR = ../bin/dx11e/Release-x64
 
 all: $(OBJ_FILES)
-	$(CC) $^ -shared -o $(addprefix $(OUTPUT_DIR)/, dx11e.dll) -ld3d11 -ldxgi -ld3dcompiler -L. -l../vendor/dxerr -Wl,--subsystem,windows,--out-implib,$(addprefix $(OUTPUT_DIR)/, libdx11e.a)
+    $(CC) $^ -shared -o $(addprefix $(OUTPUT_DIR)/, dx11e.dll) -ld3d11 -ldxgi -ld3dcompiler -L. -l../vendor/dxerr -Wl,--subsystem,windows,--out-implib,$(addprefix $(OUTPUT_DIR)/, libdx11e.a)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
-	$(CC) -c $< $(LFLAGS) $(ADDITIONAL_INCLUDES) -o $@
+    $(CC) -c $< $(LFLAGS) $(ADDITIONAL_INCLUDES) -o $@
 
 -include $(OBJ_FILES:.o=.d)

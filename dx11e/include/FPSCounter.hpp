@@ -9,21 +9,21 @@
 DX11E_START
 
 class DX11E_API FPSCounter final {
-	
-	public: 
-		FPSCounter();
-		
-		FPSCounter(std::queue<FLOAT>);
-		
-		void Push(FLOAT);
-		FLOAT GetAverageFPS() const;
-	
-	public: 
-		inline static constexpr FLOAT MAX_SIZE = 100u;
-	
-	private: 
-		std::queue<FLOAT> m_queue;
-	
+    
+    public: 
+        FPSCounter();
+        
+        FPSCounter(std::queue<FLOAT>);
+        
+        void Push(FLOAT);
+        FLOAT GetAverageFPS() const;
+    
+    public: 
+        inline static constexpr FLOAT MAX_SIZE = 100u;
+    
+    private: 
+        std::queue<FLOAT> m_queue;
+    
 };
 
 DX11E_END
